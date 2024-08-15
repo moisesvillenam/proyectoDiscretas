@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Amortización Francesa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Amortización Francesa</h1>
+    </header>
+    <main>
+        <form id="amortizacion-form">
+            <label for="monto">Monto del Préstamo:</label>
+            <input type="number" id="monto" required><br>
+
+            <label for="tasa">Tasa de Interés Anual (%):</label>
+            <input type="number" step="0.01" id="tasa" required><br>
+
+            <label for="periodos">Número de Periodos:</label>
+            <input type="number" id="periodos" required><br>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div id="resultado">
+            <h2>Resultados</h2>
+            <table id="tabla-resultados">
+                <thead>
+                    <tr>
+                        <th>Periodo</th>
+                        <th>Cuota</th>
+                        <th>Intereses</th>
+                        <th>Amortización</th>
+                        <th>Saldo Remanente</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <img id="grafico" alt="Gráfico de Amortización" />
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
